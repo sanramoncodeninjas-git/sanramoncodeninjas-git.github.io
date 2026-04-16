@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+svg {
+  width: 90%;
+  max-width: 1000px;
+  border: 1px solid #ccc;
+}
+
+/* Base country style */
+.country {
+  stroke: #333;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* 4 color groups */
+.group1 { fill: #ff6b6b; }
+.group2 { fill: #4ecdc4; }
+.group3 { fill: #ffe66d; }
+.group4 { fill: #1a535c; }
+
+/* Hover effect */
+.country:hover {
+  opacity: 0.7;
+}
