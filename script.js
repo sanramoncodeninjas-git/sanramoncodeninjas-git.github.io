@@ -46,7 +46,7 @@ const closeBtn = document.createElement("div");
 closeBtn.textContent = "✖";
 closeBtn.style.position = "absolute";
 closeBtn.style.top = "5px";
-closeBtn.style.right = "8px";
+closeBtn.style.right = "14px";
 closeBtn.style.cursor = "pointer";
 closeBtn.style.fontWeight = "bold";
 closeBtn.style.color = "red";
@@ -77,6 +77,31 @@ function resetRound() {
   previewBox.appendChild(closeBtn); // keep X button
   line.style.width = "0";
 }
+
+function drawLine() {
+    const rect = activeCountry.getBoundingClientRect();
+    const previewRect = previewBox.getBoundingClientRect();
+
+    const x1 = previewRect.right;
+    const y1 = previewRect.top + previewRect.height / 2;
+
+    const x2 = rect.left + rect.width / 2;
+    const y2 = rect.top + rect.height / 2;
+
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    const length = Math.sqrt(dx * dx + dy * dy);
+    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+    line.style.width = length + "px";
+    line.style.left = x1 + "px";
+    line.style.top = y1 + "px";
+    line.style.transform = `rotate(${angle}deg)`;
+}
+
+document.addEventListener("scroll", function() {
+    drawLine();
+});
 
 // close button click
 closeBtn.addEventListener("click", resetRound);
@@ -186,25 +211,7 @@ countries.forEach(country => {
       `translate(${offsetX - minX * scale}, ${offsetY - minY * scale}) scale(${scale})`
     );
 
-
     // line
-    const rect = country.getBoundingClientRect();
-    const previewRect = previewBox.getBoundingClientRect();
-
-    const x1 = previewRect.right;
-    const y1 = previewRect.top + previewRect.height / 2;
-
-    const x2 = rect.left + rect.width / 2;
-    const y2 = rect.top + rect.height / 2;
-
-    const dx = x2 - x1;
-    const dy = y2 - y1;
-    const length = Math.sqrt(dx * dx + dy * dy);
-    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-
-    line.style.width = length + "px";
-    line.style.left = x1 + "px";
-    line.style.top = y1 + "px";
-    line.style.transform = `rotate(${angle}deg)`;
+    drawLine();
   });
 });
