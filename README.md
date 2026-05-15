@@ -1,2 +1,2 @@
 # sanramoncodeninjas-git.github.io
-page
+Code Ninjas page -- San Ramon
