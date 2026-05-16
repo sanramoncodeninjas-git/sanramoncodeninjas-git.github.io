@@ -66,6 +66,27 @@ section {
   font-family: sans-serif;
 }
 
+#reading {
+  text-align: left;
+  float: left;
+  width: 100%;
+}
+
+#reading a {
+    color: rgb(93, 137, 153);
+}
+
+#reading .column {
+  float: left;
+  width: 50%;
+}
+
+#reading .column:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 #footer-cred {
   font-size: 14px;
   margin-left: -36%;
