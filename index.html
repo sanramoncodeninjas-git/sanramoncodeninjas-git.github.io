@@ -11,7 +11,7 @@
 <hr style="width:60%">
 
 <section id="games">
-    <h2>Apps & Games </h2>
+    <h2>Apps & Games</h2>
     <div style="display: flex; justify-content: center;">
       <div class="image-link" data-link="games/worldmap/index.html">
           <img src="games/worldmap/geography-quiz-icon.png" alt="Preview">
@@ -19,12 +19,33 @@
       </div>
     </div>
     <script src="game.js"></script>
-    
 </section>
 
-<br><br>
-
-<h2>Project Ideas </h2>
+<section id="ideas">
+    <h2>Project Ideas</h2>
+    <div style="display: flex; justify-content: center;">
+      <div class="image-link" data-link="ideas/tictactoe.html">
+          <img src="ideas/tictactoe.png" alt="Preview">
+          <p>Tic-Tac-Toe</p>
+      </div>
+      <div class="image-link" data-link="ideas/connect4.html">
+          <img src="ideas/connect4.png" alt="Preview">
+          <p>Connect 4</p>
+      </div>
+      <div class="image-link" data-link="ideas/snake.html">
+          <img src="ideas/snake.png" alt="Preview">
+          <p>Snake</p>
+      </div>
+      <div class="image-link" data-link="https://pixelpad.io/app/vxbuhccqnhg/">
+          <img src="ideas/flappybird.png" alt="Preview">
+          <p>Flappy Bird</p>
+      </div>
+      <div class="image-link" data-link="">
+          <img src="ideas/mancala.png" alt="Preview">
+          <p>Mancala</p>
+      </div>
+    </div>
+</section>
 
 <br><br>
 
@@ -135,8 +156,9 @@
 <br><br><br><br>
 <script>
         document.querySelectorAll(".image-link").forEach(link => {
-            link.addEventListener("click", function () {
-                window.location.href = this.dataset.link;
+            link.addEventListener("mousedown", function (event) {
+                if (event.button != 2)
+                    window.location.href = this.dataset.link;
             });
         });
     </script>
