@@ -32,6 +32,12 @@ h3 {
   width: 100px;
   height: 100px;
 }
+.img-link-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
 .image-link {
   width: 180px;
@@ -40,9 +46,6 @@ h3 {
   cursor: pointer;
   transition: transform 0.2s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  cursor: pointer;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 section {
