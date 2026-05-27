@@ -9,6 +9,7 @@ body {
     #fefefe 50%,
     #b0b0b0 100%
   );
+  overflow-x: hidden;
 }
 
 h1 {

@@ -40,9 +40,25 @@
           <img src="ideas/flappybird.png" alt="Preview">
           <p>Flappy Bird</p>
       </div>
-      <div class="image-link" data-link="">
+      <div class="image-link" data-link="https://www.mathsisfun.com/games/mancala.html">
           <img src="ideas/mancala.png" alt="Preview">
           <p>Mancala</p>
+      </div>
+      <div class="image-link" data-link="https://scratch.mit.edu/projects/61494164/fullscreen/">
+          <img src="ideas/puzzle.png" alt="Preview">
+          <p>Puzzle Game</p>
+      </div>
+      <div class="image-link" data-link="https://pixelpad.io/app/ovasdynrkqk/">
+          <img src="ideas/platformer.png" alt="Preview">
+          <p>Platformer Game</p>
+      </div>
+      <div class="image-link" data-link="https://pixelpad.io/app/qgmqiqvnsil/">
+          <img src="ideas/adventure.png" alt="Preview">
+          <p>Adventure Game</p>
+      </div>
+      <div class="image-link" data-link="https://www.ivytechengineering.com/info/multimedia_logic/index.html">
+          <img src="ideas/logic.png" alt="Preview">
+          <p>Logic Gates</p>
       </div>
     </div>
 </section>
@@ -157,8 +173,12 @@
 <script>
         document.querySelectorAll(".image-link").forEach(link => {
             link.addEventListener("mousedown", function (event) {
-                if (event.button != 2)
+                if (event.button === 0) {
                     window.location.href = this.dataset.link;
+                } else if (event.button === 1) {
+                    event.preventDefault(); // Prevent browser auto-scroll
+                    window.open(this.dataset.link, "_blank");
+                }
             });
         });
     </script>
